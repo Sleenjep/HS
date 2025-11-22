@@ -33,7 +33,7 @@ done
 **Проверка количества загруженных строк:**
 ```bash
 # docker exec -i postgres_db psql -U spark_user_name -d spark_db -c "SELECT count(*) FROM mock_data;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -i postgres_db psql -U spark_user_name -d spark_db -c "SELECT count(*) FROM mock_data;"
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -i postgres_db psql -U spark_user_name -d spark_db -c "SELECT count(*) FROM mock_data;"
  count 
 -------
  10000
@@ -101,7 +101,7 @@ docker exec -u root spark-master spark-submit \
 # SHOW TABLES LIKE 'mart%';
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SHOW TABLES LIKE 'mart%';"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SHOW TABLES LIKE 'mart%';"
 ┌─name──────────────────────────────────┐
@@ -133,7 +133,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_top_10_selling_products LIMIT 5;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_10_selling_products LIMIT 5;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_top_10_selling_products LIMIT 5;"
 ┌─business_product_id─┬─product_name─┬─product_category─┬─total_quantity_sold─┬─total_revenue_generated─┐
@@ -151,7 +151,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 ```bash
 # docker exec -it mongodb_db mongosh reports --eval "db.getCollectionNames()"
 
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports --eval "db.getCollectionNames()"
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports --eval "db.getCollectionNames()"
 [
   'mart_top_5_stores_by_revenue',
   'mart_yearly_sales_trends',
@@ -181,7 +181,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 ```bash
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_10_selling_products.find().limit(3).pretty()"
 
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports --eval "db.mart_top_10_selling_products.find().limit(3).pretty()"
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports --eval "db.mart_top_10_selling_products.find().limit(3).pretty()"
 [
   {
     _id: ObjectId('69201bdb972cebc1b5cca7ff'),
@@ -221,7 +221,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 
 # SELECT * FROM mart_top_10_selling_products;
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_10_selling_products;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_10_selling_products;"
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_10_selling_products;"
 ┌─business_product_id─┬─product_name─┬─product_category─┬─total_quantity_sold─┬─total_revenue_generated─┐
 │                 881 │ Bird Cage    │ Food             │                  76 │                 1618.15 │
 │                 790 │ Cat Toy      │ Cage             │                  77 │                 2325.62 │
@@ -241,7 +241,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 
 # SELECT * FROM mart_revenue_by_product_category;
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_revenue_by_product_category;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_revenue_by_product_category;"
 ┌─product_category─┬─category_total_revenue─┐
@@ -256,7 +256,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 
 # SELECT * FROM mart_product_feedback_summary LIMIT 10;
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_product_feedback_summary LIMIT 10;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_product_feedback_summary LIMIT 10;"
 ┌─business_product_id─┬─product_name─┬─product_category─┬─average_rating─┬─number_of_reviews─┐
@@ -281,7 +281,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_top_10_customers_by_purchase;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_10_customers_by_purchase;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_top_10_customers_by_purchase;"
 ┌─business_customer_id─┬─first_name─┬─last_name──┬─customer_country─┬─customer_total_purchases─┐
@@ -303,7 +303,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_customer_distribution_by_country;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_customer_distribution_by_country;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_customer_distribution_by_country;"
 ┌─customer_country─────────────────────────────┬─distinct_customer_count─┐
@@ -336,7 +336,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_avg_customer_order_value LIMIT 10;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_avg_customer_order_value LIMIT 10;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_avg_customer_order_value LIMIT 10;"
 ┌─business_customer_id─┬─first_name─┬─last_name──┬─avg_transaction_value_per_customer─┐
@@ -361,7 +361,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_monthly_sales_trends;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_monthly_sales_trends;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_monthly_sales_trends;"
 ┌─year─┬─month─┬─month_name─┬─monthly_total_revenue─┬─monthly_total_quantity_sold─┐
@@ -385,7 +385,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_yearly_sales_trends;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_yearly_sales_trends;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_yearly_sales_trends;"
 ┌─year─┬─yearly_total_revenue─┬─yearly_total_quantity_sold─┐
@@ -398,7 +398,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_mom_revenue_comparison;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_mom_revenue_comparison;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_mom_revenue_comparison;"
 ┌─year─┬─month─┬─month_name─┬─monthly_total_revenue─┬─previous_month_revenue─┬─mom_revenue_change─┬─mom_revenue_change_percent─┐
@@ -422,7 +422,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_avg_order_size_by_month;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_avg_order_size_by_month;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_avg_order_size_by_month;"
 ┌─year─┬─month─┬─month_name─┬─avg_monthly_order_size─┐
@@ -448,7 +448,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_top_5_stores_by_revenue;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_5_stores_by_revenue;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_top_5_stores_by_revenue;"
 ┌─store_name─┬─city───────┬─country─────┬─store_total_revenue─┐
@@ -465,7 +465,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_sales_by_store_location;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_sales_by_store_location;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_sales_by_store_location;"
 ┌─store_city────────────────┬─store_country────────────────────┬─location_total_revenue─┬─location_total_quantity_sold─┐
@@ -496,7 +496,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_avg_store_order_value;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_avg_store_order_value;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_avg_store_order_value;"
 ┌─store_name────┬─avg_transaction_value_per_store─┐
@@ -547,7 +547,7 @@ SELECT * FROM mart_top_5_suppliers_by_revenue;
 # SELECT * FROM mart_top_5_suppliers_by_revenue;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_5_suppliers_by_revenue;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_top_5_suppliers_by_revenue;"
 ┌─supplier_name─┬─supplier_country─┬─supplier_generated_revenue─┐
@@ -564,7 +564,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_avg_product_price_by_supplier;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_avg_product_price_by_supplier;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_avg_product_price_by_supplier;"
 ┌─supplier_name─┬─avg_sold_unit_price_from_supplier─┐
@@ -596,7 +596,7 @@ SELECT * FROM mart_sales_by_supplier_country;
 # SELECT * FROM mart_sales_by_supplier_country;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_sales_by_supplier_country;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_sales_by_supplier_country;"
 ┌─supplier_country─────────────────┬─country_total_revenue─┬─country_total_quantity_sold─┐
@@ -624,7 +624,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_highest_rated_products;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_highest_rated_products;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_highest_rated_products;"
 ┌─business_product_id─┬─product_name─┬─rating─┐
@@ -646,7 +646,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_lowest_rated_products;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_lowest_rated_products;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_lowest_rated_products;"
 ┌─business_product_id─┬─product_name─┬─rating─┐
@@ -668,7 +668,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_rating_sales_correlation;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_rating_sales_correlation;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_rating_sales_correlation;"
 ┌─rating_sales_volume_correlation_coeff─┐
@@ -681,7 +681,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # SELECT * FROM mart_top_reviewed_products;
 
 # docker exec -it clickhouse_db clickhouse-client --format PrettyCompactMonoBlock --query "SELECT * FROM mart_top_reviewed_products;"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it clickhouse_db clickhouse-client \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it clickhouse_db clickhouse-client \
   --format PrettyCompactMonoBlock \
   --query "SELECT * FROM mart_top_reviewed_products;"
 ┌─business_product_id─┬─product_name─┬─number_of_reviews─┐
@@ -710,7 +710,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_top_10_selling_products.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_10_selling_products.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_top_10_selling_products.find().pretty();"
 [
   {
@@ -801,7 +801,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_revenue_by_product_category.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_revenue_by_product_category.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_revenue_by_product_category.find().pretty();"
 [
   {
@@ -827,7 +827,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_product_feedback_summary.find().limit(5).pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_product_feedback_summary.find().limit(5).pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_product_feedback_summary.find().limit(5).pretty();"
 [
   {
@@ -880,7 +880,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_top_10_customers_by_purchase.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_10_customers_by_purchase.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_top_10_customers_by_purchase.find().pretty();"
 [
   {
@@ -971,7 +971,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_customer_distribution_by_country.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_customer_distribution_by_country.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_customer_distribution_by_country.find().pretty();"
 [
   {
@@ -1083,7 +1083,7 @@ Type "it" for more
 # db.mart_avg_customer_order_value.find().limit(5).pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_customer_order_value.find().limit(5).pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_avg_customer_order_value.find().limit(5).pretty();"
 [
   {
@@ -1131,7 +1131,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_monthly_sales_trends.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_monthly_sales_trends.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_monthly_sales_trends.find().pretty();"
 [
   {
@@ -1238,7 +1238,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_yearly_sales_trends.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_yearly_sales_trends.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_yearly_sales_trends.find().pretty();"
 [
   {
@@ -1255,7 +1255,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_mom_revenue_comparison.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_mom_revenue_comparison.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_mom_revenue_comparison.find().pretty();"
 [
   {
@@ -1386,7 +1386,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_avg_order_size_by_month.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_order_size_by_month.
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_avg_order_size_by_month.find().pretty();"
 [
   {
@@ -1483,7 +1483,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_top_5_stores_by_revenue.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_5_stores_by_revenue.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_top_5_stores_by_revenue.find().pretty();"
 [
   {
@@ -1529,7 +1529,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_sales_by_store_location.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_sales_by_store_location.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_sales_by_store_location.find().pretty();"
 [
   {
@@ -1681,7 +1681,7 @@ Type "it" for more
 # db.mart_avg_store_order_value.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_store_order_value.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_avg_store_order_value.find().pretty();"
 [
   {
@@ -1795,7 +1795,7 @@ Type "it" for more
 # db.mart_top_5_suppliers_by_revenue.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_5_suppliers_by_revenue.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_top_5_suppliers_by_revenue.find().pretty();"
 [
   {
@@ -1836,7 +1836,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_avg_product_price_by_supplier.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_product_price_by_supplier.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_product_price_by_supplier.find().pretty();"
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports --eval "db.mart_avg_product_price_by_supplier.find().pretty();"
 [
   {
     _id: ObjectId('69201be5972cebc1b5ccb39d'),
@@ -1947,7 +1947,7 @@ Type "it" for more
 # db.mart_sales_by_supplier_country.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_sales_by_supplier_country.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_sales_by_supplier_country.find().pretty();"
 [
   {
@@ -2081,7 +2081,7 @@ Type "it" for more
 # db.mart_highest_rated_products.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_highest_rated_products.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_highest_rated_products.find().pretty();"
 [
   {
@@ -2152,7 +2152,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_lowest_rated_products.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_lowest_rated_products.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_lowest_rated_products.find().pretty();"
 [
   {
@@ -2223,7 +2223,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_rating_sales_correlation.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_rating_sales_correlation.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_rating_sales_correlation.find().pretty();"
 [
   {
@@ -2238,7 +2238,7 @@ alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ dock
 # db.mart_top_reviewed_products.find().pretty();
 
 # docker exec -it mongodb_db mongosh reports --eval "db.mart_top_reviewed_products.find().pretty();"
-alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/rl_lr_2_YuraDudar$ docker exec -it mongodb_db mongosh reports \
+alex@alex-Aspire-A715-75G:~/Ubuntu GDrive/VUZ/HS_NENAHOV/lr_2$ docker exec -it mongodb_db mongosh reports \
   --eval "db.mart_top_reviewed_products.find().pretty();"
 [
   {
