@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS mock_data (
+    id INT,
+    customer_first_name VARCHAR(255),
+    customer_last_name VARCHAR(255),
+    customer_age INT,
+    customer_email VARCHAR(255),
+    customer_country VARCHAR(255),
+    customer_postal_code VARCHAR(255),
+    customer_pet_type VARCHAR(255),
+    customer_pet_name VARCHAR(255),
+    customer_pet_breed VARCHAR(255),
+    seller_first_name VARCHAR(255),
+    seller_last_name VARCHAR(255),
+    seller_email VARCHAR(255),
+    seller_country VARCHAR(255),
+    seller_postal_code VARCHAR(255),
+    product_name VARCHAR(255),
+    product_category VARCHAR(255),
+    product_price DECIMAL(10, 2),
+    product_quantity INT,
+    sale_date DATE,
+    sale_customer_id INT,
+    sale_seller_id INT,
+    sale_product_id INT,
+    sale_quantity INT,
+    sale_total_price DECIMAL(10, 2),
+    store_name VARCHAR(255),
+    store_location VARCHAR(255),
+    store_city VARCHAR(255),
+    store_state VARCHAR(255),
+    store_country VARCHAR(255),
+    store_phone VARCHAR(255),
+    store_email VARCHAR(255),
+    pet_category VARCHAR(255),
+    product_weight DECIMAL(10, 2),
+    product_color VARCHAR(255),
+    product_size VARCHAR(255),
+    product_brand VARCHAR(255),
+    product_material VARCHAR(255),
+    product_description TEXT,
+    product_rating DECIMAL(3, 1),
+    product_reviews INT,
+    product_release_date DATE,
+    product_expiry_date DATE,
+    supplier_name VARCHAR(255),
+    supplier_contact VARCHAR(255),
+    supplier_email VARCHAR(255),
+    supplier_phone VARCHAR(255),
+    supplier_address VARCHAR(255),
+    supplier_city VARCHAR(255),
+    supplier_country VARCHAR(255)
+);
+
+SET datestyle = 'ISO, MDY';
+
+COPY mock_data FROM '/data/raw/MOCK_DATA.csv' DELIMITER ',' CSV HEADER;
+COPY mock_data FROM '/data/raw/MOCK_DATA (1).csv' DELIMITER ',' CSV HEADER;
+COPY mock_data FROM '/data/raw/MOCK_DATA (2).csv' DELIMITER ',' CSV HEADER;
+COPY mock_data FROM '/data/raw/MOCK_DATA (3).csv' DELIMITER ',' CSV HEADER;
+COPY mock_data FROM '/data/raw/MOCK_DATA (4).csv' DELIMITER ',' CSV HEADER;
